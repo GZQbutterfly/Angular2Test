@@ -1,0 +1,53 @@
+"@angular/common":"2.0.0",
+"@angular/compiler":"2.0.0",
+"@angular/core":"2.0.0",
+"@angular/platform-browser":"2.0.0",
+"@angular/platform-browser-dynamic":"2.0.0",
+"core-js":"~2.4.1",
+"reflect-metadata":"~0.1.8",
+"rxjs":"5.0.0-beta.12",
+"zone.js":"~0.6.26"
+
+"core-js": "^2.5.0",
+"reflect-metadata": "^0.1.10",
+"rxjs": "^5.4.3",
+"zone.js": "^0.8.16"
+
+devDependencies
+"@types/core-js":"~0.9.34",
+"ts-loader":"~1.2.0",
+"typescript":"~2.0.0",
+
+
+cnpm install @angular/common @angular/compiler @angular/core @angular/platform-browser @angular/platform-browser-dynamic --save
+
+cnpm install core-js reflect-metadata rxjs zone.js --save
+
+--npm install source-map-dev-tool-plugin --save-dev
+cnpm install @types/core-js ts-loader typescript --save-dev
+
+cnpm install   postcss-loader --save-dev
+
+
+
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "preserveConstEnums": true,
+        "typeRoots": ["./node_modules/@types/"]
+    },
+    "compileOnSave": true,
+    "exclude": ["node_modules"],
+    "include": ["src/**/*"],
+    "types":[
+      "core-js"
+    ]
+}
