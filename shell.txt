@@ -23,15 +23,20 @@ cnpm install @angular/common @angular/compiler @angular/core @angular/platform-b
 
 cnpm install core-js reflect-metadata rxjs zone.js --save
 
---npm install source-map-dev-tool-plugin --save-dev
+cnpm install @angular/router --save
+cnpm install source-map-loader --save
+cnpm install   pubsub --save
 cnpm install @types/core-js ts-loader typescript --save-dev
 
 cnpm install   postcss-loader --save-dev
 
-
+cnpm install   raw-loader --save-dev
+cnpm install   file-loader --save-dev
 
 {
     "compilerOptions": {
+        "outDir": "dist",
+        "rootDir": ".",
         "module": "commonjs",
         "target": "es5",
         "moduleResolution": "node",
@@ -44,10 +49,19 @@ cnpm install   postcss-loader --save-dev
         "preserveConstEnums": true,
         "typeRoots": ["./node_modules/@types/"]
     },
-    "compileOnSave": true,
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    },
     "exclude": ["node_modules"],
     "include": ["src/**/*"],
-    "types":[
-      "core-js"
+    "types": [
+        "core-js"
     ]
 }
+
+
+https://github.com/angular-programming/angular2-contacts-demo
+
+https://github.com/angular-programming/hello-world

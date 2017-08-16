@@ -1,0 +1,107 @@
+.detail-contain {
+    //position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+
+    .header-detail {
+        background-color: #3DD689;
+
+        .back-to-list {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #ffffff;
+            padding-left: 40px;
+            text-decoration: none;
+            position: relative;
+
+            .icon-back {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                width: 25px;
+                height: 25px;
+                //background: url("src/app/assets/images/back.png") no-repeat;
+                background-size: cover;
+                transform: translateY(-50%);
+            }
+        }
+
+        .edit {
+            float: right;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #ffffff;
+            padding-right: 15px;
+        }
+
+        .name-and-icon {
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .contact-name {
+                display: block;
+                line-height: 35px;
+                font-size: 18px;
+                text-align: center;
+                position: relative;
+                color: #ffffff;
+
+                i {
+                    position: absolute;
+                    top: 2px;
+                    right: 45px;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+
+                    &.collect {
+                        background: url("../assets/images/collect.png") no-repeat;
+                        background-size: cover;
+                    }
+
+                    &.collected {
+                        background: url("../assets/images/collected.png") no-repeat;
+                        background-size: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .detail-info {
+        padding: 15px 15px 0;
+
+        li {
+            list-style: none;
+            width: 100%;
+            min-height: 60px;
+            padding-top: 5px;
+            border-bottom: 1px solid #eaeaea;
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                padding-top: 5px;
+            }
+        }
+    }
+
+    .intro {
+        padding: 10px 15px 0;
+
+        h3 {
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+    }
+}

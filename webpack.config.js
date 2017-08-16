@@ -9,7 +9,7 @@ let autoprefixer = require('autoprefixer');
 // ==>
 module.exports = {
     //sourceMap: true,
-    //devtool: 'source-map',
+    devtool: 'source-map',
     entry: [path.join(sourcePath, 'src/main.ts')],
     output: {
         path: path.join(sourcePath, '/dist'),
@@ -20,18 +20,20 @@ module.exports = {
             test: /\.ts$/,
             use: 'ts-loader'
         }, {
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract({
-                use: ['css-loader'],
-                fallback: ['style-loader']
-            })
+            test: /\.(html|htm)$/,
+            use: 'raw-loader'
         }, {
-            test: /\.less$/,
+            test: /\.(less|css)$/,
             use: ExtractTextPlugin.extract({
                 use: ['css-loader', 'less-loader'],
                 fallback: 'style-loader'
             })
-        }]
+        },
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: ['file-loader']
+        }
+      ]
     },
     resolve: {
         extensions: ['.ts', '.js']
@@ -57,11 +59,12 @@ module.exports = {
         }]),
         // new CopyWebpackPlugin([{
         //     from: path.join(sourcePath, '/src/app/**/**.html'),
-        //     to: path.join(sourcePath, '/dist/app/'),
+        //     to: path.join(sourcePath, '/dist/app/**/**.html'),
         //     toType:'dir'
         // }]),
         //new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        //new webpack.optimize.ModuleConcatenationPlugin(),
         //new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')

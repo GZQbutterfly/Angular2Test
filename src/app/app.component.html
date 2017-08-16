@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <!-- 左侧（菜单+login）-->
+        <div class="col-md-2 left-menu">
+            <div class="left-menu-header">
+                Login
+            </div>
+            <div class="nav nav-tabs left-menu-nav">
+                <ul>
+                    <li>
+                      <a href="/list">demo</a>
+                    </li>
+                    <li>nav2
+                        <ul>
+                            <li>nav2-01</li>
+                            <li>nav2-02</li>
+                        </ul>
+                    </li>
+                    <li>nav3</li>
+                    <li>nav4</li>
+                </ul>
+            </div>
+        </div>
+        <!--  右侧（内容+header）-->
+        <div class="col-md-10 right-content">
+            <div class="right-content-header">
+                <h2>Hello, Angular2 & Typescript</h2></div>
+            <div class="right-content-main">
+                <div class="main" style="width:400px;">
+                    <base href="/">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

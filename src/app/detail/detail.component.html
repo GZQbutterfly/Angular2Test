@@ -1,0 +1,35 @@
+<div class="detail-contain">
+    <div class="header-detail">
+        <a [routerLink]=" ['']" class="back-to-list" title="返回联系人列表">
+            <i class="icon-back"></i> 所有联系人
+        </a>
+        <a class="edit" (click)="editContact()">编辑</a>
+        <div class="name-and-icon">
+            <img src="../app/assets/images/Iverson.jpg">
+            <span class="contact-name">
+              {{ detail.name }}
+              <i [ngClass]="{collect: detail.collection == 0, collected: detail.collection == 1}"
+              (click)="collectTheContact()"></i>
+               <!--  detail.collection == 1 ? '取消收藏' ：'添加收藏'
+               title="{{'取消收藏': detail.collection == 0, '添加收藏': detail.collection == 1}}"-->
+            </span>
+        </div>
+    </div>
+    <ul class="detail-info">
+        <li>
+            <p>手机号码：{{ detail.telNum | phone }}</p>
+        </li>
+        <li>
+            <p>邮箱：{{ detail.email }}</p>
+        </li>
+        <li>
+            <p>生日：{{ detail.birthday | date:'yyyy-MM-dd'}}</p>
+        </li>
+        <li>
+            <p>住址：{{ detail.address }}</p>
+        </li>
+    </ul>
+    <article class="intro">
+        <h3>简介:</h3> 生活态度好，热爱运动
+    </article>
+</div>
