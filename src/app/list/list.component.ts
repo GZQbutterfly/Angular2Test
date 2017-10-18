@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
             .subscribe((data:any) => {
               this.contacts = data;
               sessionStorage.setItem("contacts",JSON.stringify(data));
-            });          
+            });
         } else {
             this.contacts = JSON.parse(ss_contacts);
         }
@@ -38,7 +38,6 @@ export class ListComponent implements OnInit {
     }
 
     routerNavigate(id: number) {
-        console.log(this._router);
         this._router.navigate(['/detail', id]);
     }
 

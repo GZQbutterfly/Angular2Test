@@ -1,3 +1,4 @@
+<base href="/">
 <div class="container">
     <div class="row">
         <!-- 左侧（菜单+login）-->
@@ -6,18 +7,8 @@
                 Login
             </div>
             <div class="nav nav-tabs left-menu-nav">
-                <ul>
-                    <li>
-                      <a href="/list">demo</a>
-                    </li>
-                    <li>nav2
-                        <ul>
-                            <li>nav2-01</li>
-                            <li>nav2-02</li>
-                        </ul>
-                    </li>
-                    <li>nav3</li>
-                    <li>nav4</li>
+                <ul class="menu-items">
+                    <menu-ui [menus]="menus"></menu-ui>
                 </ul>
             </div>
         </div>
@@ -26,12 +17,10 @@
             <div class="right-content-header">
                 <h2>Hello, Angular2 & Typescript</h2></div>
             <div class="right-content-main">
-                <div class="main" style="width:400px;">
-                    <base href="/">
+                <div class="main">
                     <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
     </div>
-
 </div>

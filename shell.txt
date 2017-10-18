@@ -22,7 +22,7 @@ devDependencies
 cnpm install @angular/common @angular/compiler @angular/core @angular/platform-browser @angular/platform-browser-dynamic --save
 
 cnpm install core-js reflect-metadata rxjs zone.js --save
-
+cnpm install   uuid --save
 cnpm install @angular/router --save
 cnpm install source-map-loader --save
 cnpm install   pubsub --save

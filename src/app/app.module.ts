@@ -1,18 +1,20 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 
 import {rootRouterConfig} from './app.router.ts';
 import {AppComponent} from './app.component.ts';
-
+import {HomeComponent} from './home';
+import {MenuComponent} from './menu';
+import * as FormComponent from './form';
 
 import {ListComponent, ListItemComponent} from './list';
 import {CollectionComponent} from './collection';
 import {DetailComponent} from './detail';
 import {EditComponent} from './edit';
-
+import {NotFoundComponent} from './404.component.ts';
 
 import {ContactService, UtilService, FooterComponent, HeaderComponent, PhonePipe, BtnClickDirective} from './shared';
 
@@ -22,19 +24,25 @@ import {ContactService, UtilService, FooterComponent, HeaderComponent, PhonePipe
 @NgModule({
     declarations: [
         AppComponent,
+        HomeComponent,
+        MenuComponent,
+        FormComponent.ButtonComponent,
+        FormComponent.InputComponent,
         ListComponent,
         ListItemComponent,
         DetailComponent,
         CollectionComponent,
         EditComponent,
         HeaderComponent, FooterComponent,
+        NotFoundComponent,
         PhonePipe, BtnClickDirective
     ],
     imports: [
       BrowserModule,
       FormsModule,
+      ReactiveFormsModule,
       HttpModule,
-      RouterModule.forRoot(rootRouterConfig)
+      RouterModule.forRoot(rootRouterConfig,{useHash:true})
     ],
     providers: [
       ContactService,

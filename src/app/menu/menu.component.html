@@ -1,0 +1,9 @@
+<li *ngFor="let menu of menus" class=" menu-item">
+    <a href="{{menu.path}}" (click)="linkTo($event, menu)">{{menu.label}}</a>
+    <!-- menu-ui -->
+    <span *ngIf="menu.nodes && menu.nodes.length" class="icon icon-chevron-right" aria-hidden="true"></span>
+    <ul *ngIf="menu.nodes && menu.nodes.length" class="menu-items menu-items-hide">
+        <menu-ui [menus]="menu.nodes">
+        </menu-ui>
+    </ul>
+</li>
